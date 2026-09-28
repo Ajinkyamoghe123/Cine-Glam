@@ -16,7 +16,7 @@ for (const route of routes) {
   });
 }
 
-test("portfolio cards stay on Cine Glam and show an embedded film", async ({ page }) => {
+test("portfolio cards stay on CineGlam Media and show an embedded film", async ({ page }) => {
   await page.goto("/work");
   const project = page.getByRole("link", { name: /shri mangal bhog/i });
   await expect(project).toHaveAttribute("href", "/work/shri-mangal-bhog");

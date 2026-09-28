@@ -49,7 +49,7 @@ export default function HomePage() {
 
       <section className="ecosystem-band" id="process" aria-labelledby="ecosystem-title">
         <div className="ecosystem-band__intro">
-          <p className="eyebrow">04 / The Cine Glam model</p>
+          <p className="eyebrow">04 / The CineGlam Media model</p>
           <h2 id="ecosystem-title">One brand. One team. One creative ecosystem.</h2>
           <p>Strategy → Branding → Content → Production → Editing → Marketing → Growth.</p>
         </div>

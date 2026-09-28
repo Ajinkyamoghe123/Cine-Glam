@@ -6,7 +6,7 @@ import { industries } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "From strategy to final cut: the Cine Glam creative, content, production and growth services.",
+  description: "From strategy to final cut: the CineGlam Media creative, content, production and growth services.",
 };
 
 export default function ServicesPage() {

@@ -5,7 +5,7 @@ test("contact form confirms a valid enquiry locally", async ({ page }) => {
     const payload = JSON.parse(route.request().postData() ?? "{}");
     expect(payload).toMatchObject({
       email: "asha@example.com",
-      _subject: "New Cine Glam project enquiry",
+      _subject: "New CineGlam Media project enquiry",
       message: "Launch a seasonal film and content system.",
     });
     await route.fulfill({

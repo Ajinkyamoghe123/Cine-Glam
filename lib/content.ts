@@ -78,7 +78,7 @@ export const services: readonly Service[] = [
   },
   {
     number: "04",
-    title: "Cine Glam Studio",
+    title: "CineGlam Media Studio",
     shortTitle: "Studio & Services",
     eyebrow: "Studio",
     description: "A flexible space for product, fashion, creator, podcast and green-screen work.",
@@ -199,8 +199,8 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "cine-glam-studio",
-    title: "Cine Glam Studio",
-    client: "Cine Glam Studio",
+    title: "CineGlam Media Studio",
+    client: "CineGlam Media Studio",
     meta: "Studio / Setup / Podcast",
     categories: ["Creator Content", "Reels & Video"],
     image: "/work/studio-podcast.jpg",
@@ -274,7 +274,7 @@ export const projects: readonly Project[] = [
   {
     slug: "behind-the-scenes",
     title: "Behind the Scenes",
-    client: "Cine Glam BTS",
+    client: "CineGlam Media BTS",
     meta: "BTS / Lighting / Production",
     categories: ["Reels & Video", "Creator Content"],
     image: "/work/bts-setup.jpg",

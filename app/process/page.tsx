@@ -5,7 +5,7 @@ import { processStages } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Process",
-  description: "The Cine Glam process from brief to growth.",
+  description: "The CineGlam Media process from brief to growth.",
 };
 
 export default function ProcessPage() {

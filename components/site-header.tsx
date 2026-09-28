@@ -36,8 +36,8 @@ export function SiteHeader({ activePath }: { activePath?: string }) {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href={sitePath("/")} aria-label="Cine Glam home">
-        CINE GLAM
+      <a className="wordmark" href={sitePath("/")} aria-label="CineGlam Media home">
+        CINEGLAM MEDIA
       </a>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {navItems.map(([label, href]) => (

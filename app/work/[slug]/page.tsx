@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   return {
     title: project?.title ?? "Project",
-    description: project?.summary ?? "Selected Cine Glam work.",
+    description: project?.summary ?? "Selected CineGlam Media work.",
   };
 }
 

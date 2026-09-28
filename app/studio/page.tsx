@@ -6,14 +6,14 @@ import { services } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Studio",
-  description: "A flexible Cine Glam studio for product, fashion, creator, reels and podcast work.",
+  description: "A flexible CineGlam Media studio for product, fashion, creator, reels and podcast work.",
 };
 
 export default function StudioPage() {
   const studioService = services[3];
   return (
     <div className="inner-page">
-      <SectionIntro eyebrow="Cine Glam Studio" title="A space built to create." body="A calm, considered production space for the work that needs a little more room, light and control." />
+      <SectionIntro eyebrow="CineGlam Media Studio" title="A space built to create." body="A calm, considered production space for the work that needs a little more room, light and control." />
       <StudioFeature image={studioService.image} />
       <section className="studio-details">
         <div><p className="eyebrow">The setup</p><h2>Ready for the shoot you have in mind.</h2></div>

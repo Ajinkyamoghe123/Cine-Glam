@@ -6,7 +6,7 @@ import { projects } from "../../lib/content";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected Cine Glam work across hospitality, fashion, food, automotive, architecture and creator content.",
+  description: "Selected CineGlam Media work across hospitality, fashion, food, automotive, architecture and creator content.",
 };
 
 export default function WorkPage() {

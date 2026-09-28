@@ -6,8 +6,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Cine Glam | We create. We capture. We grow.",
-    template: "%s | Cine Glam",
+    default: "CineGlam Media | We create. We capture. We grow.",
+    template: "%s | CineGlam Media",
   },
   description:
     "A creative, content, production and digital growth studio built around one connected ecosystem.",

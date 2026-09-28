@@ -4,7 +4,7 @@ import { SectionIntro } from "../../components/section-intro";
 
 export const metadata: Metadata = {
   title: "Start a Project",
-  description: "Tell Cine Glam what you are building and start the conversation.",
+  description: "Tell CineGlam Media what you are building and start the conversation.",
 };
 
 export default function ContactPage() {

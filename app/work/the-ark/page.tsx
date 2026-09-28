@@ -6,7 +6,7 @@ import { arkCaseStudy } from "../../../lib/content";
 
 export const metadata: Metadata = {
   title: "The Ark",
-  description: "How Cine Glam built a warmer, more memorable digital story for The Ark hospitality brand.",
+  description: "How CineGlam Media built a warmer, more memorable digital story for The Ark hospitality brand.",
 };
 
 export default function TheArkCaseStudyPage() {

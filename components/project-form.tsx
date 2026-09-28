@@ -51,7 +51,7 @@ export function ProjectForm() {
           company: values.company.trim(),
           email: values.email.trim(),
           message: values.brief.trim(),
-          _subject: "New Cine Glam project enquiry",
+          _subject: "New CineGlam Media project enquiry",
           _template: "table",
           _honey: "",
         }),

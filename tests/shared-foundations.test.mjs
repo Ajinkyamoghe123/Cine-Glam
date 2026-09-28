@@ -9,7 +9,7 @@ test("shared content preserves the six proposal service verticals", async () => 
     "Digital Marketing & Social Media",
     "Content Creation",
     "Professional Production",
-    "Cine Glam Studio",
+    "CineGlam Media Studio",
     "Podcast Production",
     "Creator & Influencer Content",
   ]) {
