@@ -26,6 +26,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = projects.find((entry) => entry.slug === slug);
   const galleryImages = project?.gallery ?? (project ? [project.image] : []);
+  const videos = project?.videos ?? (project?.embedUrl ? [{ label: project.sourceLabel ?? "Selected film", embedUrl: project.embedUrl }] : []);
 
   if (!project) notFound();
 
@@ -61,19 +62,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <p>{project.summary} We shaped the visual language around the real character of the project, so the work can move naturally between campaign, social and the moments in between.</p>
       </section>
 
-      {project.embedUrl ? (
+      {videos.length > 0 ? (
         <section className="project-page__film" aria-labelledby="project-film-title">
           <div className="project-page__film-heading">
             <p className="eyebrow">Selected film</p>
-            <h2 id="project-film-title">See it in motion.</h2>
+            <div>
+              <h2 id="project-film-title">{videos.length > 1 ? "A selection of the films." : "See it in motion."}</h2>
+              <span>{videos.length} {videos.length === 1 ? "film" : "films"}</span>
+            </div>
           </div>
-          <div className="project-page__player">
-            <iframe
-              src={project.embedUrl}
-              title={`${project.title} video`}
-              allow="autoplay; fullscreen"
-              allowFullScreen
-            />
+          <div className={`project-page__film-grid${videos.length === 1 ? " project-page__film-grid--single" : ""}`}>
+            {videos.map((video) => (
+              <article className="project-page__film-card" key={video.embedUrl}>
+                <div className="project-page__player">
+                  <iframe
+                    src={video.embedUrl}
+                    title={`${project.title} ${video.label} video`}
+                    loading="lazy"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                  />
+                </div>
+                <p>{video.label}</p>
+              </article>
+            ))}
           </div>
         </section>
       ) : null}
@@ -81,8 +93,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <section className="project-page__gallery" aria-labelledby="project-gallery-title">
         <div className="project-page__gallery-heading">
           <div>
-            <p className="eyebrow">Selected frames</p>
-            <h2 id="project-gallery-title">More from the shoot.</h2>
+            <p className="eyebrow">{galleryImages.length > 1 ? "Selected frames" : "Featured frame"}</p>
+            <h2 id="project-gallery-title">{galleryImages.length > 1 ? "More from the shoot." : "The visual language."}</h2>
           </div>
           <span>{galleryImages.length} images</span>
         </div>
@@ -94,7 +106,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 alt={`${project.title} project frame ${index + 1}`}
                 width={1200}
                 height={1600}
-                loading={index === 0 ? "eager" : "lazy"}
+                loading={index < 4 ? "eager" : "lazy"}
                 decoding="async"
               />
             </figure>

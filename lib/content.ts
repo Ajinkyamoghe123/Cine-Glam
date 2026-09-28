@@ -21,6 +21,7 @@ export type Project = {
   summary: string;
   sourceUrl?: string;
   embedUrl?: string;
+  videos?: readonly { label: string; embedUrl: string }[];
   sourceLabel?: string;
   featured?: boolean;
 };
@@ -117,6 +118,11 @@ export const projects: readonly Project[] = [
     summary: "A warm restaurant story built around the details people come back for.",
     sourceUrl: "https://drive.google.com/file/d/1WcHAUnG9VryH9BaKYT4sRThA_bd9mEG1/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1WcHAUnG9VryH9BaKYT4sRThA_bd9mEG1/preview",
+    videos: [
+      { label: "Restaurant film", embedUrl: "https://drive.google.com/file/d/1WcHAUnG9VryH9BaKYT4sRThA_bd9mEG1/preview" },
+      { label: "Food story / 01", embedUrl: "https://drive.google.com/file/d/1TKNZ5NInGHbErk-6pwrxXJu-vVHGRNR7/preview" },
+      { label: "Food story / 02", embedUrl: "https://drive.google.com/file/d/1Rv1DNZfm_gISEwbkpPtdWO9otM2wY1Jp/preview" },
+    ],
     sourceLabel: "Play film",
     featured: true,
   },
@@ -139,6 +145,11 @@ export const projects: readonly Project[] = [
     summary: "Short-form education with a clear point of view and a human face.",
     sourceUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/preview",
+    videos: [
+      { label: "Education film / 01", embedUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/preview" },
+      { label: "Education film / 02", embedUrl: "https://drive.google.com/file/d/1WyMPWcL7YyOLTLuZ3JzwkzXBCORbZAaH/preview" },
+      { label: "Education film / 03", embedUrl: "https://drive.google.com/file/d/1ientaOYrf7SDuCKJZlQfA5bwY2ciaV4u/preview" },
+    ],
     sourceLabel: "Play film",
     featured: true,
   },
@@ -153,6 +164,12 @@ export const projects: readonly Project[] = [
     summary: "A repeatable vertical format that keeps the guest, the idea and the edit moving.",
     sourceUrl: "https://drive.google.com/file/d/1YrxcRxbFbTkHGaR0wBNbAsNcGzajqZVC/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1YrxcRxbFbTkHGaR0wBNbAsNcGzajqZVC/preview",
+    videos: [
+      { label: "Vertical episode / 01", embedUrl: "https://drive.google.com/file/d/1YrxcRxbFbTkHGaR0wBNbAsNcGzajqZVC/preview" },
+      { label: "Vertical episode / 02", embedUrl: "https://drive.google.com/file/d/1j2hZ8th2pzN5F5vhTAnm6QGmzkeukyCJ/preview" },
+      { label: "Vertical episode / 03", embedUrl: "https://drive.google.com/file/d/1pYaLB6_TZP6-bpM3y5DwDXavONb1Ag1o/preview" },
+      { label: "Vertical episode / 04", embedUrl: "https://drive.google.com/file/d/1AlVNu2bv_9a-kYGmRNTuexYKrAcKx09M/preview" },
+    ],
     sourceLabel: "Play film",
     featured: true,
   },
@@ -165,9 +182,14 @@ export const projects: readonly Project[] = [
     image: "/work/asankhrang-01.jpg",
     heroFit: "contain",
     galleryLayout: "portrait",
-    gallery: ["/work/asankhrang-01.jpg", "/work/asankhrang-02.jpg", "/work/asankhrang-03.jpg", "/work/asankhrang-04.jpg", "/work/asankhrang-05.jpg", "/work/asankhrang-06.jpg"],
+    gallery: ["/work/asankhrang-01.jpg", "/work/asankhrang-02.jpg", "/work/asankhrang-03.jpg", "/work/asankhrang-04.jpg", "/work/asankhrang-05.jpg", "/work/asankhrang-06.jpg", "/work/asankhrang-07.jpg", "/work/asankhrang-08.jpg", "/work/asankhrang-09.jpg", "/work/asankhrang-10.jpg", "/work/asankhrang-11.jpg", "/work/asankhrang-12.jpg", "/work/asankhrang-13.jpg"],
     summary: "A fashion content system that carries from the product frame to the feed.",
     sourceUrl: "https://drive.google.com/drive/folders/1Q_SvQEgamAUsu23mH1U6gExjAnvEIuwL",
+    videos: [
+      { label: "Fashion film / 07", embedUrl: "https://drive.google.com/file/d/14ZKnan08w3Vp6FMk3Wb8nU50Y_UvZ9YS/preview" },
+      { label: "Fashion film / 08", embedUrl: "https://drive.google.com/file/d/1tgIIkjRGtzpYRE0NtjXfbTpPIBlW6rRm/preview" },
+      { label: "Fashion film / 09", embedUrl: "https://drive.google.com/file/d/1A_5IMeqm1cDFh-_FRAsrGbydQ6vy54e7/preview" },
+    ],
     sourceLabel: "View project",
     featured: true,
   },
@@ -178,7 +200,7 @@ export const projects: readonly Project[] = [
     meta: "Fashion / E-commerce / Product",
     categories: ["Fashion", "Photography"],
     image: "/work/rivaazz-01.jpg",
-    gallery: ["/work/rivaazz-01.jpg", "/work/rivaazz-02.jpg", "/work/rivaazz-03.jpg", "/work/rivaazz-04.jpg", "/work/rivaazz-05.jpg"],
+    gallery: ["/work/rivaazz-01.jpg", "/work/rivaazz-02.jpg", "/work/rivaazz-03.jpg", "/work/rivaazz-04.jpg", "/work/rivaazz-05.jpg", "/work/rivaazz-06.jpg", "/work/rivaazz-07.jpg", "/work/rivaazz-08.jpg", "/work/rivaazz-09.jpg", "/work/rivaazz-10.jpg", "/work/rivaazz-11.jpg", "/work/rivaazz-12.jpg", "/work/rivaazz-13.jpg"],
     summary: "Clean product storytelling with enough texture to feel like a real collection.",
     sourceUrl: "https://drive.google.com/drive/folders/1bi01iPVz_1D_Pk0HfVRDyRt3tnTG874w",
     sourceLabel: "View project",
@@ -194,6 +216,11 @@ export const projects: readonly Project[] = [
     heroFit: "contain",
     summary: "A hospitality reel series that makes the place feel close before the visit.",
     sourceUrl: "https://drive.google.com/drive/folders/154P6sFLHR7ToBcKZlC73DAG3aUk-jVEO",
+    videos: [
+      { label: "Hotel film / 01", embedUrl: "https://drive.google.com/file/d/1VFeWRmaZaoDlalF6PIx037SPMN1JGKzP/preview" },
+      { label: "Hotel film / 02", embedUrl: "https://drive.google.com/file/d/1wEPusOzhmKSP9WcjTjvZlRxucj-RVkbF/preview" },
+      { label: "Hotel film / 03", embedUrl: "https://drive.google.com/file/d/1bYbtmLeTPUdWtBMeG8NBD-myS6FaFWQa/preview" },
+    ],
     sourceLabel: "View project",
     featured: true,
   },
@@ -208,6 +235,10 @@ export const projects: readonly Project[] = [
     summary: "A flexible set built for podcasts, creators, product stories and repeatable content.",
     sourceUrl: "https://drive.google.com/file/d/1RtjidLAhgWD-VUukWsoP0AJxlvfmEeT9/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1RtjidLAhgWD-VUukWsoP0AJxlvfmEeT9/preview",
+    videos: [
+      { label: "Studio setup / 01", embedUrl: "https://drive.google.com/file/d/1RtjidLAhgWD-VUukWsoP0AJxlvfmEeT9/preview" },
+      { label: "Studio setup / 02", embedUrl: "https://drive.google.com/file/d/1p1qRVE5U6pjmYqj4TbwzUbEAiW2wMWsx/preview" },
+    ],
     sourceLabel: "Play film",
   },
   {
@@ -221,6 +252,11 @@ export const projects: readonly Project[] = [
     summary: "A visual explanation that gives a complex subject a clearer way in.",
     sourceUrl: "https://drive.google.com/file/d/1_AeEAmyCUQMZRZswNNbjhSAA9xdDvLP4/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1_AeEAmyCUQMZRZswNNbjhSAA9xdDvLP4/preview",
+    videos: [
+      { label: "Animation / 01", embedUrl: "https://drive.google.com/file/d/179juyynpgCM0VB8K0QRQAkfQ_rZ0xVQQ/preview" },
+      { label: "Animation / 02", embedUrl: "https://drive.google.com/file/d/1_AeEAmyCUQMZRZswNNbjhSAA9xdDvLP4/preview" },
+      { label: "Animation / 03", embedUrl: "https://drive.google.com/file/d/1vPimZ9k3OetYZbxeG8x7CX2wBKZCSflG/preview" },
+    ],
     sourceLabel: "Play film",
   },
   {
@@ -232,6 +268,11 @@ export const projects: readonly Project[] = [
     image: "/work/bmw-z4.jpg",
     summary: "A moving automotive story with the camera close enough to feel the drive.",
     sourceUrl: "https://drive.google.com/drive/folders/1uV_xAxvD87lXOzzHxkUuaFu8PtjIVIJ9",
+    videos: [
+      { label: "BMW Z4 / 01", embedUrl: "https://drive.google.com/file/d/1vQa6Koyd7FRq-Wdgsh2vre_x5Fh2OcP5/preview" },
+      { label: "BMW Z4 / 02", embedUrl: "https://drive.google.com/file/d/1IO4qjm6DL637mvlBnoo05mQJZElZVzo9/preview" },
+      { label: "BMW Z4 / 03", embedUrl: "https://drive.google.com/file/d/1Vjz-jSYIL3wMHwhdB5f0TmtTnHyHIJi-/preview" },
+    ],
     sourceLabel: "View project",
   },
   {
@@ -256,6 +297,11 @@ export const projects: readonly Project[] = [
     image: "/work/mudoven.jpg",
     summary: "Small details, warm light and a stay you can almost hear before you arrive.",
     sourceUrl: "https://drive.google.com/drive/folders/1VZsRJlxgu2p7CuvnWjGDI7z1MsCzfuy7",
+    videos: [
+      { label: "Hotel film / 01", embedUrl: "https://drive.google.com/file/d/1q2mQsOtjwoOfekw-0hNx7JxnXp70EtjV/preview" },
+      { label: "Hotel film / 02", embedUrl: "https://drive.google.com/file/d/1mu02kv-VEG3KR1CHJKWokOsm2-7-d-ur/preview" },
+      { label: "Hotel film / 03", embedUrl: "https://drive.google.com/file/d/1K9u3cWHkP8Q5Yf4MosjzeUTfV788-Ar6/preview" },
+    ],
     sourceLabel: "View project",
   },
   {

@@ -22,14 +22,21 @@ test("portfolio cards stay on CineGlam Media and show an embedded film", async (
   await expect(project).toHaveAttribute("href", "/work/shri-mangal-bhog");
   await project.click();
   await expect(page).toHaveURL(/\/work\/shri-mangal-bhog\/?$/);
-  await expect(page.locator("iframe[title='Shri Mangal Bhog video']")).toHaveAttribute("src", /drive.google.com\/file\/d\/.*\/preview/);
+  await expect(page.locator(".project-page__film-card")).toHaveCount(3);
+  await expect(page.locator("iframe[title^='Shri Mangal Bhog']").first()).toHaveAttribute("src", /drive.google.com\/file\/d\/.*\/preview/);
 });
 
 test("fashion project exposes the supplied photo set on-site", async ({ page }) => {
   await page.goto("/work/asankhrang-fashion");
-  await expect(page.locator(".project-gallery-item img")).toHaveCount(6);
+  await expect(page.locator(".project-gallery-item img")).toHaveCount(13);
   await expect(page.locator(".project-gallery-item img").first()).toHaveAttribute("src", /asankhrang-01\.jpg/);
-  await expect(page.locator(".project-gallery-item img").last()).toHaveAttribute("src", /asankhrang-06\.jpg/);
+  await expect(page.locator(".project-gallery-item img").last()).toHaveAttribute("src", /asankhrang-13\.jpg/);
+});
+
+test("Rivaazz project exposes the expanded local photo set", async ({ page }) => {
+  await page.goto("/work/rivaazz-ecommerce");
+  await expect(page.locator(".project-gallery-item img")).toHaveCount(13);
+  await expect(page.locator(".project-gallery-item img").last()).toHaveAttribute("src", /rivaazz-13\.jpg/);
 });
 
 test("business education project shows five locally hosted frames", async ({ page }) => {
