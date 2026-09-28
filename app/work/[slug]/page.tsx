@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
           <span>{galleryImages.length} images</span>
         </div>
-        <div className={`project-gallery-grid${galleryImages.length === 1 ? " project-gallery-grid--single" : ""}`}>
+        <div className={`project-gallery-grid${galleryImages.length === 1 ? " project-gallery-grid--single" : ""}${project.galleryLayout === "portrait" ? " project-gallery-grid--portrait" : ""}`}>
           {galleryImages.map((image, index) => (
             <figure className="project-gallery-item" key={image}>
               <img

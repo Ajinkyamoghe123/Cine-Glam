@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 };
 
 const roles = [
-  { title: "Creative & Production", body: "The people, pictures and production craft that turn a good idea into something you can feel.", image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85" },
-  { title: "Digital Marketing & Branding", body: "The strategy, language and distribution that help the work find the right people at the right time.", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" },
+  { title: "Creative & Production", body: "The people, pictures and production craft that turn a good idea into something you can feel.", image: "/site/about-creative.jpg" },
+  { title: "Digital Marketing & Branding", body: "The strategy, language and distribution that help the work find the right people at the right time.", image: "/services/digital-marketing.jpg" },
 ];
 
 export default function AboutPage() {

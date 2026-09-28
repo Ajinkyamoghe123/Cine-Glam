@@ -31,3 +31,10 @@ test("fashion project exposes the supplied photo set on-site", async ({ page }) 
   await expect(page.locator(".project-gallery-item img").first()).toHaveAttribute("src", /asankhrang-01\.jpg/);
   await expect(page.locator(".project-gallery-item img").last()).toHaveAttribute("src", /asankhrang-06\.jpg/);
 });
+
+test("business education project shows five locally hosted frames", async ({ page }) => {
+  await page.goto("/work/business-education-films");
+  await expect(page.locator(".project-gallery-item img")).toHaveCount(5);
+  await expect(page.locator(".project-gallery-item img").first()).toHaveAttribute("src", /business-education-01\.jpg/);
+  await expect(page.locator(".project-gallery-item img").last()).toHaveAttribute("src", /business-education-05\.jpg/);
+});

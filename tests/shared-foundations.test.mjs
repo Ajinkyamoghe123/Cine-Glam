@@ -24,3 +24,14 @@ test("shared header exposes an accessible full-screen menu contract", async () =
   assert.match(header, /aria-controls/);
   assert.match(header, /Escape/);
 });
+
+test("portfolio media is locally served and business education has a five-frame gallery", async () => {
+  const content = await readFile(new URL("../lib/content.ts", import.meta.url), "utf8");
+
+  assert.doesNotMatch(content, /images\.unsplash\.com/);
+  const businessEducation = content.match(/slug: "business-education-films"[\s\S]*?\n  },/);
+  assert.ok(businessEducation, "business education project should exist");
+  assert.match(businessEducation[0], /gallery: \[[^\]]{5,}\]/);
+  assert.match(businessEducation[0], /business-education-01\.jpg/);
+  assert.match(businessEducation[0], /business-education-05\.jpg/);
+});

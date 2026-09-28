@@ -7,10 +7,8 @@ import { StudioFeature } from "../components/studio-feature";
 import { WorkGrid } from "../components/work-grid";
 import { industries, projects, testimonials } from "../lib/content";
 
-const showreelImage =
-  "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2200&q=88";
-const studioImage =
-  "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1800&q=88";
+const showreelImage = "/site/home-hero.jpg";
+const studioImage = "/site/studio.jpg";
 
 export default function HomePage() {
   return (

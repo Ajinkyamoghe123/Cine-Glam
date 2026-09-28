@@ -4,7 +4,7 @@ import { sitePath } from "../lib/site";
 export function StudioFeature({ image }: { image: string }) {
   return (
     <section className="studio-feature" id="studio" aria-labelledby="studio-feature-title">
-      <div className="studio-feature__image" style={{ backgroundImage: `url(${sitePath(image)})` }} />
+      <img className="studio-feature__image" src={sitePath(image)} alt="Cine Glam studio ready for a production" width={1800} height={1200} loading="lazy" />
       <div className="studio-feature__veil" />
       <div className="studio-feature__content">
         <p className="eyebrow eyebrow--light">Cine Glam Studio</p>

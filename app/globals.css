@@ -167,8 +167,12 @@ button:focus-visible {
 .hero__media {
   background-position: center;
   background-size: cover;
+  display: block;
   filter: saturate(0.72) contrast(1.08);
+  height: 100%;
+  object-fit: cover;
   transform: scale(1.02);
+  width: 100%;
 }
 
 .hero__veil {
@@ -363,8 +367,12 @@ h1 {
 .service-card__image {
   background-position: center;
   background-size: cover;
+  display: block;
   filter: saturate(0.75);
+  height: 100%;
+  object-fit: cover;
   transition: transform 450ms cubic-bezier(0.2, 0.65, 0.25, 1);
+  width: 100%;
 }
 
 .service-card::after {
@@ -661,7 +669,11 @@ h1 {
 .studio-feature__image {
   background-position: center;
   background-size: cover;
+  display: block;
   filter: saturate(0.72);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .studio-feature__veil {
@@ -1093,7 +1105,11 @@ h1 {
 .service-detail__media {
   background-position: center;
   background-size: cover;
+  display: block;
   filter: saturate(0.7);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .service-detail__body {
@@ -1504,6 +1520,11 @@ h1 {
   grid-template-columns: minmax(0, min(420px, 100%));
 }
 
+.project-gallery-grid--portrait {
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .project-gallery-item {
   background: var(--charcoal);
   margin: 0;
@@ -1533,6 +1554,13 @@ h1 {
 
 .project-gallery-grid--single .project-gallery-item {
   aspect-ratio: 1400 / 2491;
+  grid-column: auto;
+  grid-row: auto;
+  min-height: 0;
+}
+
+.project-gallery-grid--portrait .project-gallery-item {
+  aspect-ratio: 9 / 16;
   grid-column: auto;
   grid-row: auto;
   min-height: 0;
@@ -2272,9 +2300,19 @@ h1 {
     grid-auto-rows: 230px;
   }
 
+  .project-gallery-grid--portrait {
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr;
+  }
+
   .project-gallery-item:nth-child(n) {
     grid-column: span 12;
     grid-row: span 1;
+  }
+
+  .project-gallery-grid--portrait .project-gallery-item {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .project-page__player {

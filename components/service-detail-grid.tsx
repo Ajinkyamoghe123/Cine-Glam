@@ -4,9 +4,9 @@ import { sitePath } from "../lib/site";
 export function ServiceDetailGrid() {
   return (
     <div className="service-detail-grid">
-      {services.map((service) => (
+      {services.map((service, index) => (
         <article className="service-detail" key={service.number}>
-          <div className="service-detail__media" style={{ backgroundImage: `url(${sitePath(service.image)})` }} />
+          <img className="service-detail__media" src={sitePath(service.image)} alt="" width={1200} height={800} loading={index < 2 ? "eager" : "lazy"} decoding="async" />
           <div className="service-detail__body">
             <p className="eyebrow">{service.number} / {service.eyebrow}</p>
             <h2>{service.title}</h2>

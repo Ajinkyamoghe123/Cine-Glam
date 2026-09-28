@@ -23,7 +23,7 @@ export default function TheArkCaseStudyPage() {
       </section>
       <CaseStudySections sections={arkCaseStudy.sections} />
       <section className="case-study-gallery" aria-label="The Ark project gallery">
-        {[arkCaseStudy.heroImage, "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1200&q=85", "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85", "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=85"].map((image, index) => <div className={`gallery-image gallery-image--${index + 1}`} style={{ backgroundImage: `url(${image})` }} key={image} />)}
+        {[arkCaseStudy.heroImage, "/ark/gallery-01.jpg", "/ark/gallery-02.jpg", "/ark/gallery-03.jpg"].map((image, index) => <div className={`gallery-image gallery-image--${index + 1}`} style={{ backgroundImage: `url(${image})` }} key={image} />)}
       </section>
       <section className="contact-band case-study-cta">
         <div>

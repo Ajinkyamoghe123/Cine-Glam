@@ -16,6 +16,7 @@ export type Project = {
   categories: readonly string[];
   image: string;
   gallery?: readonly string[];
+  galleryLayout?: "portrait" | "mixed";
   heroFit?: "cover" | "contain";
   summary: string;
   sourceUrl?: string;
@@ -55,7 +56,7 @@ export const services: readonly Service[] = [
     eyebrow: "Digital Growth",
     description: "A point of view, carried consistently from first post to last click.",
     capabilities: ["Social Media Management", "Content Strategy", "Meta Ads", "Google Ads", "Analytics & Reporting", "SEO", "Brand Growth"],
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85",
+    image: "/services/digital-marketing.jpg",
   },
   {
     number: "02",
@@ -64,7 +65,7 @@ export const services: readonly Service[] = [
     eyebrow: "Content",
     description: "Reels, campaigns, interviews and everyday brand language with a pulse.",
     capabilities: ["Reels", "Product Content", "Food & Lifestyle", "UGC", "Interviews", "BTS", "Creative Direction"],
-    image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=85",
+    image: "/services/content-creation.jpg",
   },
   {
     number: "03",
@@ -73,7 +74,7 @@ export const services: readonly Service[] = [
     eyebrow: "Production",
     description: "Films that make the brand feel clear, considered and alive.",
     capabilities: ["Advertisement Films", "Brand Films", "Corporate Films", "Music Videos", "Fashion Films", "Cinematography", "Photography"],
-    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85",
+    image: "/services/production.jpg",
   },
   {
     number: "04",
@@ -82,7 +83,7 @@ export const services: readonly Service[] = [
     eyebrow: "Studio",
     description: "A flexible space for product, fashion, creator, podcast and green-screen work.",
     capabilities: ["Product Setup", "Fashion Setup", "Creator Setup", "Reels Setup", "Podcast Setup", "Green Screen", "Hourly Rentals"],
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=85",
+    image: "/services/studio.jpg",
   },
   {
     number: "05",
@@ -91,7 +92,7 @@ export const services: readonly Service[] = [
     eyebrow: "Podcast",
     description: "Good sound, thoughtful light and a finished edit people want to return to.",
     capabilities: ["Multi-camera Setup", "Audio", "Lighting", "Recording", "Editing", "Shorts", "Thumbnails"],
-    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85",
+    image: "/services/podcast.jpg",
   },
   {
     number: "06",
@@ -100,7 +101,7 @@ export const services: readonly Service[] = [
     eyebrow: "Creator Content",
     description: "Content that keeps the person in the frame and the idea moving.",
     capabilities: ["Creator Shoots", "Reels", "Photography", "Editing", "Podcast Production"],
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=1200&q=85",
+    image: "/services/creator.jpg",
   },
 ];
 
@@ -125,8 +126,16 @@ export const projects: readonly Project[] = [
     client: "Business Education Series",
     meta: "Education / Social Video / Reels",
     categories: ["Creator Content", "Reels & Video"],
-    image: "/work/business-education.jpg",
+    image: "/work/business-education-01.jpg",
     heroFit: "contain",
+    galleryLayout: "portrait",
+    gallery: [
+      "/work/business-education-01.jpg",
+      "/work/business-education-02.jpg",
+      "/work/business-education-03.jpg",
+      "/work/business-education-04.jpg",
+      "/work/business-education-05.jpg",
+    ],
     summary: "Short-form education with a clear point of view and a human face.",
     sourceUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/preview",
@@ -155,6 +164,7 @@ export const projects: readonly Project[] = [
     categories: ["Fashion", "Photography", "Social Media"],
     image: "/work/asankhrang-01.jpg",
     heroFit: "contain",
+    galleryLayout: "portrait",
     gallery: ["/work/asankhrang-01.jpg", "/work/asankhrang-02.jpg", "/work/asankhrang-03.jpg", "/work/asankhrang-04.jpg", "/work/asankhrang-05.jpg", "/work/asankhrang-06.jpg"],
     summary: "A fashion content system that carries from the product frame to the feed.",
     sourceUrl: "https://drive.google.com/drive/folders/1Q_SvQEgamAUsu23mH1U6gExjAnvEIuwL",
@@ -333,7 +343,7 @@ export const testimonials: readonly Testimonial[] = [
 export const arkCaseStudy = {
   title: "The Ark",
   metadata: ["Hospitality", "Social Media", "Content Production"],
-  heroImage: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=88",
+  heroImage: "/ark/hero.jpg",
   summary: "A hospitality brand with a beautiful room, a quiet confidence and a story that needed more room to breathe.",
   results: [
     ["+320%", "Instagram reach"],
