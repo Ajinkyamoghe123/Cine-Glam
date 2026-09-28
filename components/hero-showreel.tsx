@@ -10,7 +10,7 @@ export function HeroShowreel({ showreelImage }: { showreelImage: string }) {
     <section className="hero" aria-labelledby="hero-title">
       <div
         className="hero__media"
-        style={{ backgroundImage: `url(${showreelImage})` }}
+        style={{ backgroundImage: `url(${sitePath(showreelImage)})` }}
         role="img"
         aria-label="A filmmaker working behind a cinema camera"
       />

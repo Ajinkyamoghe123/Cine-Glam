@@ -9,11 +9,11 @@ test("home exposes the primary project CTA and selected work", async ({ page }) 
 
 test("home filters selected work without leaving the page", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("link", { name: /the ark/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /shri mangal bhog/i })).toBeVisible();
 
   await page.getByRole("button", { name: "Photography", exact: true }).click();
 
   await expect(page).toHaveURL(/127\.0\.0\.1:4173\/$/);
-  await expect(page.getByRole("link", { name: /aurelia/i })).toBeVisible();
+  await expect(page.getByRole("link", { name: /asankhrang fashion|rivaazz ecommerce/i }).first()).toBeVisible();
   await expect(page.getByRole("button", { name: "Photography", exact: true })).toHaveAttribute("aria-pressed", "true");
 });

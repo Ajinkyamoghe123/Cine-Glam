@@ -1,9 +1,10 @@
 import { ArrowLink } from "./arrow-link";
+import { sitePath } from "../lib/site";
 
 export function StudioFeature({ image }: { image: string }) {
   return (
     <section className="studio-feature" id="studio" aria-labelledby="studio-feature-title">
-      <div className="studio-feature__image" style={{ backgroundImage: `url(${image})` }} />
+      <div className="studio-feature__image" style={{ backgroundImage: `url(${sitePath(image)})` }} />
       <div className="studio-feature__veil" />
       <div className="studio-feature__content">
         <p className="eyebrow eyebrow--light">Cine Glam Studio</p>

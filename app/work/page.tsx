@@ -18,7 +18,7 @@ export default function WorkPage() {
         body="A portfolio of considered work across content, campaigns, photography and production."
       />
       <div className="work-page-heading">
-        <span>Portfolio / 06 projects</span>
+        <span>Portfolio / {projects.length} projects</span>
         <ArrowLink href="/contact" variant="light">Start a project</ArrowLink>
       </div>
       <WorkGrid projects={projects} showFilters />

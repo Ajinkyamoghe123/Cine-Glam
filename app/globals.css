@@ -1332,6 +1332,166 @@ h1 {
   margin: 0 calc(clamp(22px, 8vw, 128px) * -1);
 }
 
+.project-page {
+  background: var(--paper);
+  min-height: 100vh;
+  padding: 0 clamp(22px, 8vw, 128px) clamp(76px, 9vw, 132px);
+}
+
+.project-page__topline {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  padding: 18px 0;
+  text-transform: uppercase;
+}
+
+.back-link--static {
+  color: var(--ink);
+  position: static;
+}
+
+.project-page__hero {
+  color: var(--white);
+  min-height: min(680px, calc(100vh - 74px));
+  margin: 0 calc(clamp(22px, 8vw, 128px) * -1);
+  overflow: hidden;
+  position: relative;
+}
+
+.project-page__hero-image,
+.project-page__hero-veil {
+  inset: 0;
+  position: absolute;
+}
+
+.project-page__hero-image {
+  background-position: center;
+  background-size: cover;
+  filter: saturate(0.78);
+}
+
+.project-page__hero-veil {
+  background: linear-gradient(90deg, rgba(15, 13, 11, 0.88), rgba(15, 13, 11, 0.18));
+}
+
+.project-page__hero-content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  max-width: 680px;
+  padding: 70px clamp(22px, 8vw, 128px);
+  position: relative;
+  z-index: 1;
+}
+
+.project-page__hero h1 {
+  font-size: clamp(64px, 10vw, 144px);
+  line-height: 0.86;
+  margin-bottom: 22px;
+}
+
+.project-page__hero-content > p:last-child {
+  color: rgba(247, 244, 237, 0.78);
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 420px;
+}
+
+.project-page__intro {
+  display: grid;
+  gap: 42px;
+  grid-template-columns: 0.9fr 1fr;
+  padding: clamp(72px, 9vw, 132px) 0;
+}
+
+.project-page__intro h2,
+.project-page__film h2 {
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 0.96;
+  margin: 0;
+  max-width: 560px;
+}
+
+.project-page__intro > p {
+  color: var(--muted);
+  font-size: 16px;
+  margin: 28px 0 0;
+  max-width: 500px;
+}
+
+.project-page__film {
+  border-top: 1px solid var(--line);
+  padding: 72px 0 88px;
+}
+
+.project-page__film-heading {
+  align-items: flex-end;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.project-page__film-heading .eyebrow {
+  margin: 0;
+}
+
+.project-page__player {
+  background: var(--ink);
+  margin: 0 auto;
+  max-width: 1120px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.project-page__player iframe {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.project-page__details {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-page__details > div {
+  border-right: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+  min-height: 130px;
+  padding: 22px;
+}
+
+.project-page__details > div:last-child {
+  border-right: 0;
+}
+
+.project-page__details span {
+  color: var(--orange);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-page__details strong {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
 @media (max-width: 860px) {
   .desktop-nav {
     display: none;
@@ -1988,5 +2148,47 @@ h1 {
   .form-actions {
     align-items: start;
     flex-direction: column;
+  }
+
+  .project-page__topline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-page__hero {
+    min-height: 610px;
+  }
+
+  .project-page__hero-content {
+    padding-bottom: 46px;
+  }
+
+  .project-page__intro,
+  .project-page__details {
+    grid-template-columns: 1fr;
+  }
+
+  .project-page__intro {
+    gap: 12px;
+  }
+
+  .project-page__film-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .project-page__player {
+    aspect-ratio: 9 / 16;
+  }
+
+  .project-page__details > div {
+    border-bottom: 1px solid var(--line);
+    border-right: 0;
+  }
+
+  .project-page__details > div:last-child {
+    border-bottom: 0;
   }
 }
