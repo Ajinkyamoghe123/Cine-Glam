@@ -23,7 +23,9 @@ test("portfolio cards show a poster before loading each embedded film", async ({
   await page.goto("/work/shri-mangal-bhog");
   await expect(page.locator(".project-page__film-card")).toHaveCount(3);
   await expect(page.locator(".project-page__film-poster")).toHaveCount(3);
-  await expect(page.locator(".project-page__film-poster img").first()).toHaveAttribute("src", /food-shri-mangal-bhog\.jpg/);
+  const posterSources = await page.locator(".project-page__film-poster img").evaluateAll((images) => images.map((image) => image.getAttribute("src")));
+  expect(new Set(posterSources).size).toBe(3);
+  expect(posterSources[0]).toMatch(/drive\.google\.com\/thumbnail\?id=/);
   await expect(page.locator("iframe[title^='Shri Mangal Bhog']")).toHaveCount(0);
 
   await page.locator(".project-page__film-poster").first().click();

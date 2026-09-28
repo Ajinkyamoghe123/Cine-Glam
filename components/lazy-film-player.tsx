@@ -8,8 +8,14 @@ type LazyFilmPlayerProps = {
   title: string;
 };
 
+function getDriveThumbnail(embedUrl: string) {
+  const fileId = embedUrl.match(/\/file\/d\/([^/]+)/)?.[1];
+  return fileId ? `https://drive.google.com/thumbnail?id=${fileId}&sz=w1600` : null;
+}
+
 export function LazyFilmPlayer({ embedUrl, poster, title }: LazyFilmPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [posterSrc, setPosterSrc] = useState(() => getDriveThumbnail(embedUrl) ?? poster);
 
   if (isPlaying) {
     return (
@@ -30,7 +36,15 @@ export function LazyFilmPlayer({ embedUrl, poster, title }: LazyFilmPlayerProps)
       aria-label={`Play ${title}`}
       onClick={() => setIsPlaying(true)}
     >
-      <img src={poster} alt="" loading="lazy" decoding="async" />
+      <img
+        src={posterSrc}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        onError={() => {
+          if (posterSrc !== poster) setPosterSrc(poster);
+        }}
+      />
       <span className="project-page__film-poster-shade" aria-hidden="true" />
       <span className="project-page__film-play" aria-hidden="true">
         <span>▶</span>
