@@ -24,3 +24,10 @@ test("portfolio cards stay on Cine Glam and show an embedded film", async ({ pag
   await expect(page).toHaveURL(/\/work\/shri-mangal-bhog\/?$/);
   await expect(page.locator("iframe[title='Shri Mangal Bhog video']")).toHaveAttribute("src", /drive.google.com\/file\/d\/.*\/preview/);
 });
+
+test("fashion project exposes the supplied photo set on-site", async ({ page }) => {
+  await page.goto("/work/asankhrang-fashion");
+  await expect(page.locator(".project-gallery-item img")).toHaveCount(6);
+  await expect(page.locator(".project-gallery-item img").first()).toHaveAttribute("src", /asankhrang-01\.jpg/);
+  await expect(page.locator(".project-gallery-item img").last()).toHaveAttribute("src", /asankhrang-06\.jpg/);
+});

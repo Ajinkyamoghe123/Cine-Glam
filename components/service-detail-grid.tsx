@@ -6,7 +6,7 @@ export function ServiceDetailGrid() {
     <div className="service-detail-grid">
       {services.map((service) => (
         <article className="service-detail" key={service.number}>
-          <div className="service-detail__media" style={{ backgroundImage: `url(${service.image})` }} />
+          <div className="service-detail__media" style={{ backgroundImage: `url(${sitePath(service.image)})` }} />
           <div className="service-detail__body">
             <p className="eyebrow">{service.number} / {service.eyebrow}</p>
             <h2>{service.title}</h2>

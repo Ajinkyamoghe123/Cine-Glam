@@ -38,9 +38,17 @@ export function WorkGrid({ projects, showFilters = false, limit }: WorkGridProps
         </div>
       ) : null}
       <div className="work-grid">
-        {visibleProjects.map((project) => (
+        {visibleProjects.map((project, index) => (
           <a className="work-card" href={sitePath(`/work/${project.slug}`)} key={project.slug}>
-            <div className="work-card__image" style={{ backgroundImage: `url(${sitePath(project.image)})` }} />
+            <img
+              className="work-card__image"
+              src={sitePath(project.image)}
+              alt={`${project.title} project thumbnail`}
+              width={1200}
+              height={900}
+              loading={index < 2 ? "eager" : "lazy"}
+              decoding="async"
+            />
             <div className="work-card__veil" />
             <div className="work-card__caption">
               <span className="work-card__title">{project.title}</span>

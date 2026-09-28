@@ -70,6 +70,30 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
       ) : null}
 
+      <section className="project-page__gallery" aria-labelledby="project-gallery-title">
+        <div className="project-page__gallery-heading">
+          <div>
+            <p className="eyebrow">Selected frames</p>
+            <h2 id="project-gallery-title">More from the shoot.</h2>
+          </div>
+          <span>{project.gallery?.length ?? 1} images</span>
+        </div>
+        <div className="project-gallery-grid">
+          {(project.gallery ?? [project.image]).map((image, index) => (
+            <figure className="project-gallery-item" key={image}>
+              <img
+                src={sitePath(image)}
+                alt={`${project.title} project frame ${index + 1}`}
+                width={1200}
+                height={1600}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="project-page__details" aria-label="Project details">
         <div><span>Client</span><strong>{project.client}</strong></div>
         <div><span>Focus</span><strong>{project.categories.join(" / ")}</strong></div>
