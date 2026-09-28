@@ -44,8 +44,8 @@ export function WorkGrid({ projects, showFilters = false, limit }: WorkGridProps
               className="work-card__image"
               src={sitePath(project.image)}
               alt={`${project.title} project thumbnail`}
-              width={1200}
-              height={900}
+              width={1400}
+              height={1000}
               loading={index < 2 ? "eager" : "lazy"}
               decoding="async"
             />

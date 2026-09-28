@@ -16,6 +16,7 @@ export type Project = {
   categories: readonly string[];
   image: string;
   gallery?: readonly string[];
+  heroFit?: "cover" | "contain";
   summary: string;
   sourceUrl?: string;
   embedUrl?: string;
@@ -54,7 +55,7 @@ export const services: readonly Service[] = [
     eyebrow: "Digital Growth",
     description: "A point of view, carried consistently from first post to last click.",
     capabilities: ["Social Media Management", "Content Strategy", "Meta Ads", "Google Ads", "Analytics & Reporting", "SEO", "Brand Growth"],
-    image: "/work/business-education.jpg",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85",
   },
   {
     number: "02",
@@ -63,7 +64,7 @@ export const services: readonly Service[] = [
     eyebrow: "Content",
     description: "Reels, campaigns, interviews and everyday brand language with a pulse.",
     capabilities: ["Reels", "Product Content", "Food & Lifestyle", "UGC", "Interviews", "BTS", "Creative Direction"],
-    image: "/work/asankhrang-03.jpg",
+    image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=85",
   },
   {
     number: "03",
@@ -72,7 +73,7 @@ export const services: readonly Service[] = [
     eyebrow: "Production",
     description: "Films that make the brand feel clear, considered and alive.",
     capabilities: ["Advertisement Films", "Brand Films", "Corporate Films", "Music Videos", "Fashion Films", "Cinematography", "Photography"],
-    image: "/work/asankhrang-video.jpg",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85",
   },
   {
     number: "04",
@@ -81,7 +82,7 @@ export const services: readonly Service[] = [
     eyebrow: "Studio",
     description: "A flexible space for product, fashion, creator, podcast and green-screen work.",
     capabilities: ["Product Setup", "Fashion Setup", "Creator Setup", "Reels Setup", "Podcast Setup", "Green Screen", "Hourly Rentals"],
-    image: "/work/studio-podcast.jpg",
+    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=85",
   },
   {
     number: "05",
@@ -90,7 +91,7 @@ export const services: readonly Service[] = [
     eyebrow: "Podcast",
     description: "Good sound, thoughtful light and a finished edit people want to return to.",
     capabilities: ["Multi-camera Setup", "Audio", "Lighting", "Recording", "Editing", "Shorts", "Thumbnails"],
-    image: "/work/podcast-ai.jpg",
+    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=85",
   },
   {
     number: "06",
@@ -99,7 +100,7 @@ export const services: readonly Service[] = [
     eyebrow: "Creator Content",
     description: "Content that keeps the person in the frame and the idea moving.",
     capabilities: ["Creator Shoots", "Reels", "Photography", "Editing", "Podcast Production"],
-    image: "/work/education-animation.jpg",
+    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=1200&q=85",
   },
 ];
 
@@ -111,6 +112,7 @@ export const projects: readonly Project[] = [
     meta: "Food & Hospitality / Restaurant Film",
     categories: ["Food & Lifestyle", "Reels & Video"],
     image: "/work/food-shri-mangal-bhog.jpg",
+    heroFit: "contain",
     summary: "A warm restaurant story built around the details people come back for.",
     sourceUrl: "https://drive.google.com/file/d/1WcHAUnG9VryH9BaKYT4sRThA_bd9mEG1/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1WcHAUnG9VryH9BaKYT4sRThA_bd9mEG1/preview",
@@ -124,6 +126,7 @@ export const projects: readonly Project[] = [
     meta: "Education / Social Video / Reels",
     categories: ["Creator Content", "Reels & Video"],
     image: "/work/business-education.jpg",
+    heroFit: "contain",
     summary: "Short-form education with a clear point of view and a human face.",
     sourceUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1vmbkNU_zBRLAYsDHzd-8oEMCBwVNHG3C/preview",
@@ -137,6 +140,7 @@ export const projects: readonly Project[] = [
     meta: "Podcast / Vertical Video / Social",
     categories: ["Creator Content", "Reels & Video"],
     image: "/work/podcast-ai.jpg",
+    heroFit: "contain",
     summary: "A repeatable vertical format that keeps the guest, the idea and the edit moving.",
     sourceUrl: "https://drive.google.com/file/d/1YrxcRxbFbTkHGaR0wBNbAsNcGzajqZVC/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1YrxcRxbFbTkHGaR0wBNbAsNcGzajqZVC/preview",
@@ -150,6 +154,7 @@ export const projects: readonly Project[] = [
     meta: "Fashion / E-commerce / Content",
     categories: ["Fashion", "Photography", "Social Media"],
     image: "/work/asankhrang-01.jpg",
+    heroFit: "contain",
     gallery: ["/work/asankhrang-01.jpg", "/work/asankhrang-02.jpg", "/work/asankhrang-03.jpg", "/work/asankhrang-04.jpg", "/work/asankhrang-05.jpg", "/work/asankhrang-06.jpg"],
     summary: "A fashion content system that carries from the product frame to the feed.",
     sourceUrl: "https://drive.google.com/drive/folders/1Q_SvQEgamAUsu23mH1U6gExjAnvEIuwL",
@@ -176,6 +181,7 @@ export const projects: readonly Project[] = [
     meta: "Hospitality / Hotel / Vertical Video",
     categories: ["Food & Lifestyle", "Reels & Video"],
     image: "/work/ehawkers.jpg",
+    heroFit: "contain",
     summary: "A hospitality reel series that makes the place feel close before the visit.",
     sourceUrl: "https://drive.google.com/drive/folders/154P6sFLHR7ToBcKZlC73DAG3aUk-jVEO",
     sourceLabel: "View project",
@@ -201,6 +207,7 @@ export const projects: readonly Project[] = [
     meta: "Education / Animation / Motion",
     categories: ["Commercials", "Reels & Video"],
     image: "/work/education-animation.jpg",
+    heroFit: "contain",
     summary: "A visual explanation that gives a complex subject a clearer way in.",
     sourceUrl: "https://drive.google.com/file/d/1_AeEAmyCUQMZRZswNNbjhSAA9xdDvLP4/view?usp=drivesdk",
     embedUrl: "https://drive.google.com/file/d/1_AeEAmyCUQMZRZswNNbjhSAA9xdDvLP4/preview",
@@ -224,6 +231,7 @@ export const projects: readonly Project[] = [
     meta: "Home Decor / Photography / Studio",
     categories: ["Photography", "Architecture"],
     image: "/work/grah-shobha.jpg",
+    heroFit: "contain",
     gallery: ["/work/grah-shobha.jpg", "/work/grah-shobha-02.jpg", "/work/grah-shobha-03.jpg", "/work/grah-shobha-04.jpg"],
     summary: "A tactile home story built around pattern, material and the room as experience.",
     sourceUrl: "https://drive.google.com/drive/folders/1sIGjd0stIJ_8gCEmz11O8sTmALik0wze",
@@ -247,6 +255,7 @@ export const projects: readonly Project[] = [
     meta: "Fashion / Product / Social",
     categories: ["Fashion", "Photography", "Social Media"],
     image: "/work/clothing-01.jpg",
+    heroFit: "contain",
     gallery: ["/work/clothing-01.jpg", "/work/clothing-02.jpg"],
     summary: "A product-led fashion shoot with enough character for the campaign around it.",
     sourceUrl: "https://drive.google.com/drive/folders/1d-urKICR6cTTPM9aeiP0JeSEMi81egBL",
@@ -259,6 +268,7 @@ export const projects: readonly Project[] = [
     meta: "BTS / Lighting / Production",
     categories: ["Reels & Video", "Creator Content"],
     image: "/work/bts-setup.jpg",
+    heroFit: "contain",
     gallery: ["/work/bts-setup.jpg", "/work/studio-podcast.jpg", "/work/studio-zs-setup.jpg"],
     summary: "The light, the set and the small decisions that make the finished frame work.",
     sourceUrl: "https://drive.google.com/drive/folders/1kWn0AC9iK_C8JyZ1iA6QGkfM-uKfKdnK",

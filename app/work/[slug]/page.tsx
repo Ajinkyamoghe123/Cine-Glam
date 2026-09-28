@@ -25,6 +25,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
   const project = projects.find((entry) => entry.slug === slug);
+  const galleryImages = project?.gallery ?? (project ? [project.image] : []);
 
   if (!project) notFound();
 
@@ -36,7 +37,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
 
       <section className="project-page__hero" aria-labelledby="project-title">
-        <div className="project-page__hero-image" style={{ backgroundImage: `url(${sitePath(project.image)})` }} />
+        <div
+          className="project-page__hero-image"
+          style={{
+            backgroundImage: `url(${sitePath(project.image)})`,
+            backgroundPosition: project.heroFit === "contain" ? "right center" : "center",
+            backgroundSize: project.heroFit === "contain" ? "auto 100%" : "cover",
+          }}
+        />
         <div className="project-page__hero-veil" />
         <div className="project-page__hero-content">
           <p className="eyebrow eyebrow--light">{project.meta}</p>
@@ -76,10 +84,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p className="eyebrow">Selected frames</p>
             <h2 id="project-gallery-title">More from the shoot.</h2>
           </div>
-          <span>{project.gallery?.length ?? 1} images</span>
+          <span>{galleryImages.length} images</span>
         </div>
-        <div className="project-gallery-grid">
-          {(project.gallery ?? [project.image]).map((image, index) => (
+        <div className={`project-gallery-grid${galleryImages.length === 1 ? " project-gallery-grid--single" : ""}`}>
+          {galleryImages.map((image, index) => (
             <figure className="project-gallery-item" key={image}>
               <img
                 src={sitePath(image)}
