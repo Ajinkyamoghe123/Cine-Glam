@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLink } from "../../../components/arrow-link";
+import { LazyFilmPlayer } from "../../../components/lazy-film-player";
 import { projects } from "../../../lib/content";
 import { sitePath } from "../../../lib/site";
 
@@ -72,15 +73,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
           <div className={`project-page__film-grid${videos.length === 1 ? " project-page__film-grid--single" : ""}`}>
-            {videos.map((video) => (
+            {videos.map((video, index) => (
               <article className="project-page__film-card" key={video.embedUrl}>
                 <div className="project-page__player">
-                  <iframe
-                    src={video.embedUrl}
-                    title={`${project.title} ${video.label} video`}
-                    loading="lazy"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
+                  <LazyFilmPlayer
+                    embedUrl={video.embedUrl}
+                    poster={sitePath(project.gallery?.[index] ?? project.image)}
+                    title={`${project.title} ${video.label}`}
                   />
                 </div>
                 <p>{video.label}</p>

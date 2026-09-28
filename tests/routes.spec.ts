@@ -16,14 +16,18 @@ for (const route of routes) {
   });
 }
 
-test("portfolio cards stay on CineGlam Media and show an embedded film", async ({ page }) => {
+test("portfolio cards show a poster before loading each embedded film", async ({ page }) => {
   await page.goto("/work");
   const project = page.getByRole("link", { name: /shri mangal bhog/i });
   await expect(project).toHaveAttribute("href", "/work/shri-mangal-bhog");
-  await project.click();
-  await expect(page).toHaveURL(/\/work\/shri-mangal-bhog\/?$/);
+  await page.goto("/work/shri-mangal-bhog");
   await expect(page.locator(".project-page__film-card")).toHaveCount(3);
-  await expect(page.locator("iframe[title^='Shri Mangal Bhog']").first()).toHaveAttribute("src", /drive.google.com\/file\/d\/.*\/preview/);
+  await expect(page.locator(".project-page__film-poster")).toHaveCount(3);
+  await expect(page.locator(".project-page__film-poster img").first()).toHaveAttribute("src", /food-shri-mangal-bhog\.jpg/);
+  await expect(page.locator("iframe[title^='Shri Mangal Bhog']")).toHaveCount(0);
+
+  await page.locator(".project-page__film-poster").first().click();
+  await expect(page.locator(".project-page__player iframe").first()).toHaveAttribute("src", /drive.google.com\/file\/d\/.*\/preview/);
 });
 
 test("fashion project exposes the supplied photo set on-site", async ({ page }) => {
